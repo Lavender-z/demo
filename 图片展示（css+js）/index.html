@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>图片展示</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
 </head>
@@ -10,6 +10,7 @@
     <div class="app">
 
         <div class="cardList">
+            <!-- 左按钮 -->
             <button class="cardList__btn btn btn--left">
                 <div class="icon">
                     <svg>
@@ -18,6 +19,7 @@
                 </div>
             </button>
     
+            <!-- 图片展示 -->
             <div class="cards__wrapper">
                 <div class="card current--card">
                     <div class="card__image">
@@ -38,6 +40,7 @@
                 </div>
             </div>
     
+            <!-- 右按钮 -->
             <button class="cardList__btn btn btn--right">
                 <div class="icon">
                     <svg>
@@ -47,6 +50,7 @@
             </button>
         </div>
     
+        <!-- 对应的信息 -->
         <div class="infoList">
             <div class="info__wrapper">
                 <div class="info current--info">
@@ -70,6 +74,7 @@
         </div>
     
     
+        <!-- 对应的背景 -->
         <div class="app__bg">
             <div class="app__bg__image current--image">
                 <img src="https://source.unsplash.com/JkTv__BqmaA" alt="" />
@@ -83,6 +88,7 @@
         </div>
     </div>
     
+    <!-- 加载页面 -->
     <div class="loading__wrapper">
         <div class="loader--text">Loading...</div>
         <div class="loader">
@@ -90,7 +96,7 @@
         </div>
     </div>
     
-    
+    <!-- 绘制按钮 -->
     <svg class="icons" style="display: none;">
         <symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
             <polyline points='328 112 184 256 328 400'
@@ -104,6 +110,6 @@
     
     <!-- partial -->
       <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script> 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="./script.js"></script> 
 </body>
 </html>
