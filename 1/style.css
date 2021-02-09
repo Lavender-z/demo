@@ -1,0 +1,16 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  background: #111;
+}
+
+.illo {
+  cursor: move;
+}
+
