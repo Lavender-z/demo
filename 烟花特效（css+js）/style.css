@@ -1,0 +1,52 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    background: #222;
+    font-family: 'Karla', sans-serif;
+    color: #fff;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    font-size: 58px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 2px solid #fff;
+    padding: 7.5px 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+span.pen {
+    position: relative;
+    display: inline-block;
+    animation: drop 0.75s;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes drop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
