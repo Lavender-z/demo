@@ -1,0 +1,31 @@
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#wrap-texture {
+    position: relative;
+}
+
+#canvas {
+    /* canvas 的大小 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.plane {
+    /* 限制 plane 的大小 */
+    width: 100%;
+    height: 100vh;
+}
+
+.plane img {
+    /* 隐藏 img 对象 */
+    display: none;
+}
