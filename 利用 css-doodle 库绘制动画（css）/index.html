@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>利用 css-doodle 库绘制动画</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<style>
+css-doodle {
+  --color: @p(#9fc5e8, #fffde1, #ff9d76, #93c47d, #ea9999, #f6b26b);
+  --rule: (
+    :doodle {
+      @grid: 30x1 / 18vmin;  /* 30行1列的网格 */
+     --deg: @p(-180deg, 240deg);  /* 旋转角度 */
+    }
+    :container {
+     perspective: 30vmin;  /* 当前较小的vw和vh */
+    }
+    :after, :before {
+      content: '';
+      background: var(--color); 
+      @place-cell: @r(100%) @r(100%);  /* 放置相对于网格的单元格 */
+      @size: @r(6px);
+      @shape: heart;   /* 形状 */
+    }
+  
+    @place-cell: center;
+    @size: 100%;
+  
+    box-shadow: @m2(0 0 50px var(--color));
+    background: @m100(
+      radial-gradient(var(--color) 50%, transparent 0) 
+      @r(-20%, 120%) @r(-20%, 100%) / 1px 1px
+      no-repeat
+    );
+  
+    will-change: transform, opacity;
+    animation: scale-up 12s linear infinite;
+    animation-delay: calc(-12s / @size() * @i());
+
+    @keyframes scale-up {
+      0%, 95.01%, 100% {
+        transform: translateZ(0) rotate(0);
+        opacity: 0;
+      }
+      10% { 
+        opacity: 1; 
+      }
+      95% {
+        transform: 
+          translateZ(35vmin) rotateZ(@var(--deg));
+      }
+    }
+  )
+}
+</style>
+<css-doodle use="var(--rule)"></css-doodle>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.14.2/css-doodle.min.js'></script>
+</body>
+</html>
+

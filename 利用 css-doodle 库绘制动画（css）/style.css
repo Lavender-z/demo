@@ -1,0 +1,10 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #110f31;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
