@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -70%);
+            transform: translate(-50%, -70%);
+}
+
+.load {
+    position: relative;
+    margin: 50px auto;
+    width: 100px;
+    height: 80px;
+}
+
+.gear {
+    position: absolute;
+    z-index: -10;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 5s infinite;
+            animation: spin 5s infinite;
+}
+
+.second {
+    left: 40px;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin-reverse 5s infinite;
+            animation: spin-reverse 5s infinite;
+}
+
+.third {
+    top: 45px;
+    left: -10px;
+    width: 60px;
+    height: 60px;
+}
+
+@-webkit-keyframes spin {
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin-reverse {
+    50% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    50% {
+        transform: rotate(-360deg);
+    }
+}
+
+.lil-circle {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 2px gray, 0 0 50px white;
+    width: 100px;
+    height: 100px;
+    opacity: 0.65;
+}
+
+.blur-circle {
+    position: absolute;
+    top: -19px;
+    left: -19px;
+}
+
+.text {
+    color: lightgray;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+}
