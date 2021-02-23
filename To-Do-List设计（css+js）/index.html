@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do-List设计</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<section class="container">
+  <div class="heading">
+    <img class="heading_img" src="https://iconfont.alicdn.com/s/1b8cdd11-88e3-4e9a-86bb-5bb4314a472b_origin.svg">
+    <h1 class="heading_title">To-Do List</h1>
+  </div>
+  <form class="form">
+    <div>
+      <label class="form_label" for="todo">~ Today I want to do ~</label>
+      <input class="form_input"
+           type="text" 
+           id="todo" 
+           name="to-do"
+           size="30"
+           required>
+      <button class="button"><span>Submit</span></button>
+    </div>
+  </form>
+  <div>
+    <ul class="toDoList"></ul>
+  </div>
+</section>
+
+<!-- partial -->
+  <script src="./script.js"></script>
+</body>
+</html>
