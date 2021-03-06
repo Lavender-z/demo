@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片（相册）展示设计</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="scene">
+    
+  <!-- 展示层，这里我复制了4层，可以根据自己需要进行修改 -->
+    <div class="img-cont left cont-1" data-helper="0" data-blocks="1"></div>
+    <div class="img-cont right cont-1" data-helper="0" data-blocks="1"></div>
+    <div class="content cont-1">
+      <h2 class="title">Lomond lake</h2>
+      <p class="content-text">Lomond lake is the largest lake in Scotland. It is located in the south of the Scottish Highlands, 27 kilometers from Glasgow. Surrounded by mountains, the south is slightly triangular.</p>
+      <span class="close">+</span>
+    </div>
+
+    <div class="img-cont left cont-2" data-helper="-1" data-blocks="2"></div>
+    <div class="img-cont right cont-2" data-helper="1" data-blocks="2"></div>
+    <div class="content cont-2">
+      <h2 class="title">Ardlui outdoor centre</h2>
+      <p class="content-text">Abandoned Ardlui outdoor centre. Location: Loch Lomond, Scotland. </p>
+      <span class="close">+</span>
+    </div>
+
+    <div class="img-cont left cont-3" data-helper="-2" data-blocks="3"></div>
+    <div class="img-cont right cont-3" data-helper="2" data-blocks="3"></div>
+    <div class="content cont-3">
+      <h2 class="title">Scottish mountain lake</h2>
+      <p class="content-text">Drone shot of Scottish mountain lake high up in the hills overlooking Loch Lomond and the Trossachs National Park which lurks in the distant morning haze. Location: Loch Humphrey, Scotland, U.K.</p>
+      <span class="close">+</span>
+    </div>
+
+    <div class="img-cont left cont-4" data-helper="-3" data-blocks="4"></div>
+    <div class="img-cont right cont-4" data-helper="3" data-blocks="4"></div>
+    <div class="content cont-4">
+      <h2 class="title">Mountain Valley</h2>
+      <p class="content-text">Mountain Valley, Scotland.</p>
+      <span class="close">+</span>
+    </div>
+
+    <h1 class="heading">BEAUTIFUL</h1>
+    <p class="scroll-down">scroll down</p>
+    <p class="click-blocks">click me~</p>
+    <div class="pagination">
+      <ul class="page-names">
+        <li class="active" data-page="1">Page 1</li>
+        <li data-page="2">Page 2</li>
+        <li data-page="3">Page 3</li>
+        <li data-page="4">Page 4</li>
+      </ul>
+      <ul class="page-dots">
+        <li class="active" data-page="1">•</li>
+        <li data-page="2">•</li>
+        <li data-page="3">•</li>
+        <li data-page="4">•</li>
+      </ul>
+    </div>
+  </div>
+  <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script.js"></script>
+  
+  </body>
+  </html>

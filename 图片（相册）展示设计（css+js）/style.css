@@ -1,0 +1,332 @@
+@font-face {
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/PT_Sans-Web-Bold.ttf);
+  font-family: ptsans-bold;
+}
+
+@font-face {
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/PFSquareSansPro-Regular.otf);
+  font-family: pfs-regular;
+}
+
+@font-face {
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/PFSquareSansPro-Medium.otf);
+  font-family: pfs-medium;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+  
+ul {
+  list-style-type: none;
+}
+  
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+  
+body {  
+  -webkit-font-smoothing: antialiased;
+}
+  
+.scene {
+  height: 100%;
+}
+
+.scene.active .heading,
+.scene.active .scroll-down,
+.scene.active .click-blocks,
+.scene.active .pagination {
+  opacity: 0;
+  z-index: -100;
+}
+
+.scene.active .heading {
+  transform: translateX(-50%) translateY(-50%) scale(0.5);
+}
+
+.scene.active .scroll-down {
+  transform: rotate(-90deg) scale(0.5);
+}
+
+.scene.active .click-blocks {
+  transform: rotate(-90deg) scale(0.5);
+}
+
+.scene.active .pagination {
+  transform: translateX(-50%) translateY(-50%) scale(0.5);
+}
+
+.scene.active .img-cont.active {
+  margin-top: -10vh !important;
+  width: 60vw;
+  height: 100vh;
+  transition: margin 0.3s, width 0.3s, height 0.3s;
+  z-index: 500;
+}
+
+.scene.active .img-cont.active.left {
+  margin-left: -50vw;
+}
+.scene.active .img-cont.active.right {
+  margin-left: 0;
+}
+  
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 100;
+  font-size: 5vw;
+  font-family: ptsans-bold;
+  color: #ce5d12;
+  opacity: 0.7;
+  transition: opacity 0.3s, transform 0.3s;
+  will-change: opacity, transform;
+}
+  
+.scroll-down {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform-origin: 0% 50%;
+  transform: rotate(-90deg);
+  font-family: pfs-regular;
+  font-size: 1.3vmax;
+  transition: opacity 0.3s, transform 0.3s;
+  will-change: opacity, transform;
+  z-index: 100;
+}
+  
+.click-blocks {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform-origin: 0% 50%;
+  transform: rotate(-90deg);
+  font-family: pfs-regular;
+  font-size: 1.3vmax;
+  transition: opacity 0.3s, transform 0.3s, color 0.3s;
+  will-change: opacity, transform;
+  z-index: 100;
+}
+  
+.pagination {
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: opacity 0.3s, transform 0.3s;
+  will-change: opacity, transform;
+  z-index: 100;
+}
+
+.pagination .page-names {
+  text-align: center;
+  margin-bottom: 1vh;
+  font-size: 1.2vw;
+}
+
+.pagination .page-names li {
+  display: none;
+  will-change: opacity;
+  font-family: ptsans-bold;
+}
+
+.pagination .page-names li.active {
+  display: block;
+}
+
+.pagination .page-dots {
+  text-align: center;
+}
+
+.pagination .page-dots li {
+  margin: 0.3vw;
+  float: left;
+  cursor: pointer;
+  color: #cfcfcf;
+}
+
+.pagination .page-dots li.active {
+  color: #020202;
+}
+  
+.img-cont {
+  height: 80vh;
+  width: 35vw;
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  background-size: cover;
+  transition: margin 1s cubic-bezier(0.99, 0.1, 0.35, 1.2);
+  will-change: margin;
+  z-index: 10;
+}
+
+.img-cont.closing {
+  transition: margin 0.3s, width 0.3s, height 0.3s;
+}
+
+.img-cont:not(.active) {
+  cursor: pointer;
+}
+
+.img-cont:not(.active):hover ~ .click-blocks {
+  color: #ce5d12;
+}
+
+.img-cont.left {
+  margin-left: calc(-35vw - 50px);
+}
+
+.img-cont.right {
+  margin-left: 50px;
+}
+
+.img-cont.cont-1 {
+  background: url("https://source.unsplash.com/czgir8K49w8") 50% 50% no-repeat fixed;
+}
+
+.img-cont.cont-2 {
+  background: url("https://source.unsplash.com/ySe3uJSaWOA") 50% 50% no-repeat fixed;
+}
+
+.img-cont.cont-3 {
+  background: url("https://source.unsplash.com/bvRfjknx94Q") 50% 50% no-repeat fixed;
+}
+
+.img-cont.cont-4 {
+  background: url("https://source.unsplash.com/pV_Ec0n9VN4") 50% 50% no-repeat fixed;
+}
+
+.img-cont.cont-2.left {
+  margin-top: -100vh;
+}
+
+.img-cont.cont-2.right {
+  margin-top: 100vh;
+}
+
+.img-cont.cont-3.left {
+ margin-top: -200vh;
+}
+
+.img-cont.cont-3.right {
+ margin-top: 200vh;
+}
+
+.img-cont.cont-4.left {
+ margin-top: -300vh;
+}
+
+.img-cont.cont-4.right {
+ margin-top: 300vh;
+}
+  
+  /* 如果需要添置图片可解除以下注释 */
+  /* .img-cont.cont-5.left {
+    margin-top: -400vh;
+  }
+  .img-cont.cont-5.right {
+    margin-top: 400vh;
+  }
+  .img-cont.cont-6.left {
+    margin-top: -500vh;
+  }
+  .img-cont.cont-6.right {
+    margin-top: 500vh;
+  }
+  .img-cont.cont-7.left {
+    margin-top: -600vh;
+  }
+  .img-cont.cont-7.right {
+    margin-top: 600vh;
+  }
+  .img-cont.cont-8.left {
+    margin-top: -700vh;
+  }
+  .img-cont.cont-8.right {
+    margin-top: 700vh;
+  }
+  .img-cont.cont-9.left {
+    margin-top: -800vh;
+  }
+  .img-cont.cont-9.right {
+    margin-top: 800vh;
+  }
+  .img-cont.cont-10.left {
+    margin-top: -900vh;
+  }
+  .img-cont.cont-10.right {
+    margin-top: 900vh;
+  } */
+  
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #f9d4bb;
+  z-index: 2000;
+}
+
+.content.visible {
+  opacity: 1;
+}
+
+.content.visible .title {
+  transform: translateX(0);
+ }
+
+.content.visible .content-text {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.content.visible .close {
+  transform: rotate(45deg);
+}
+
+.content .title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-family: pfs-medium;
+  transition: transform 0.5s 0.1s;
+  transform: translateX(-115%);
+}
+
+.content .content-text {
+  font-family: pfs-medium;
+  font-size: 2rem;
+  transition: transform 0.5s 0.2s, opacity 0.3s 0.2s;
+  transform-origin: 50% 80%;
+  transform: scale(0.3);
+  opacity: 0;
+}
+
+.content .close {
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  font-family: metropolis, sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  transform: rotate(45deg) translateY(-5rem);
+  cursor: pointer;
+  transition: transform 0.5s 0.3s cubic-bezier(0.45, 0.25, 0.7, 1.8), color 0.3s;
+}
+
+.content .close:hover {
+  color: #ffab4c;
+}
