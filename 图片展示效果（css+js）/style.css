@@ -1,0 +1,173 @@
+.slider {
+  width: 100%;
+  height: 100vh;
+}
+  
+.slider .items-group {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+  
+.slider .items-group .item {
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  transition: 0.5s;
+  visibility: hidden;
+  position: relative;
+  padding: 50px 20px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+  
+.slider .items-group .item:hover .bg {
+  opacity: 0.2;
+}
+  
+.slider .items-group .item:hover .block {
+  box-shadow: 0px 0px 50px #333;
+}
+  
+.slider .items-group .item.active {
+  opacity: 1;
+  visibility: visible;
+}
+  
+.slider .items-group .item .bg {
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  position: absolute;
+  transform: scale(1.03);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+  
+.slider .items-group .item .blur {
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  filter: blur(5px);
+  position: absolute;
+  transform: scale(1.03);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+  
+.slider .items-group .item .block {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: #ffffff;
+  transition: box-shadow 0.5s;
+  max-width: 300px;
+  overflow: hidden;
+  max-height: 450px;
+  border-radius: 50px;
+  transform: scale(1.03);
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  box-shadow: none;
+}
+  
+.slider .items-group .item .block .circleLight {
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  border-radius: 10px;
+  background: radial-gradient(circle at 80px 40px, #fff, transparent);
+}
+  
+.slider .items-group .item .block .text {
+  width: 100%;
+  height: 100%;
+  display: flex;  
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center;
+  background-attachment: fixed;
+}
+  
+.slider .items-group .item .block h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 130px;
+  margin-bottom: 0px;
+}
+  
+.slider .items-group .item .block p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+  
+.slider .items-group .item .block:hover {
+  box-shadow: 0px 0px 70px #111;
+}
+  
+.slider .items-group .item .block:hover .circleLight {
+  opacity: 0.4;
+}
+  
+.slider .navigations {  
+  bottom: 0px;
+  width: 100%;
+  position: absolute;
+}
+  
+.slider .navigations .dots {
+  height: 20px;
+  padding: 10px 0px;
+  text-align: center;
+}
+  
+.slider .navigations .dots li {
+  width: 10px; 
+  height: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+  
+.slider .navigations .dots li + li {
+  margin-left: 10px;
+}
+  
+.slider .navigations .dots li:hover {
+  filter: blur(2px);
+}
+  
+.slider .navigations .dots li.active {
+  width: 15px;
+  height: 15px;
+}
+  
+.slider .navigations .dots li.active:hover {
+  filter: blur(0px);
+}
