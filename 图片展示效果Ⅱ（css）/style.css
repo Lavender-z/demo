@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600;);
+
+.sample {
+  background-color: #000;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  max-width: 315px;
+  min-width: 230px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.sample * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+          transition: all 0.35s ease;
+}
+
+.sample:before,
+.sample:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 0.35s ease;
+          transition: all 0.35s ease;
+  background-color: #000;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+  content: '';
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.sample:before {
+  -webkit-transform: skew(45deg) translateX(-155%);
+          transform: skew(45deg) translateX(-155%);
+}
+
+.sample:after {
+  -webkit-transform: skew(45deg) translateX(155%);
+          transform: skew(45deg) translateX(155%);
+}
+
+.sample img {
+  backface-visibility: hidden;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.sample figcaption {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+          transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  -webkit-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
+}
+
+.sample h3 {
+  background-color: #000;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.sample a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.sample:hover > img {
+  opacity: 0.5;
+}
+
+.sample:hover:before {
+  -webkit-transform: skew(45deg) translateX(-55%);
+          transform: skew(45deg) translateX(-55%);
+}
+
+.sample:hover:after {
+  -webkit-transform: skew(45deg) translateX(55%);
+          transform: skew(45deg) translateX(55%);
+}
+
+.sample:hover figcaption {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+
+/* 仅演示，请自行调整 */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 0;
+  height: 100%;
+}
