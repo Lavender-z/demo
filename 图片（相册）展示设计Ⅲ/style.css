@@ -1,0 +1,146 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.sample {
+  font-family: 'Playfair Display', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  max-height: 220px;
+  width: 100%;
+  color: #000;
+  text-align: right;
+  font-size: 16px;
+  background-color: #000;
+}
+
+.sample * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+          transition: all 0.35s ease;
+}
+
+.sample img {
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+.sample figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 1;
+  padding: 30px 0 30px 10px;
+  background-color: #fff;
+  width: 40%;
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+}
+
+.sample figcaption:before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 100%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 120px 120px 120px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.sample:after {
+  position: absolute;
+  bottom: 50%;
+  right: 40%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 120px 120px 0 120px;
+  border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.35s ease;
+          transition: all 0.35s ease;
+}
+
+.sample h3,
+.sample p {
+  line-height: 1.5em;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+  margin: 0;
+}
+
+.sample h3 {
+  margin: 0 0 5px;
+  line-height: 1.1em;
+  font-weight: 900;
+  font-size: 1.4em;
+  opacity: 0.75;
+}
+
+.sample p {
+  font-size: 0.8em;
+}
+
+.sample i {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 30px;
+  font-size: 44px;
+  color: #fff;
+  opacity: 0;
+}
+
+.sample a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.sample:hover img,
+.sample.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+          opacity: 0.5;
+}
+
+.sample:hover:after,
+.sample.hover:after,
+.sample:hover figcaption,
+.sample.hover figcaption,
+.sample:hover i,
+.sample.hover i {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+/* 背景仅演示，请自行修改 */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 0;
+  height: 100%;
+}
