@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>文本变形动画</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+<!-- 两个文本部分 -->
+<div id="container">
+    <span id="text1"></span>
+    <span id="text2"></span>
+</div>
+
+<!-- 用于创建合并效果的 svg 过滤器 -->
+<svg id="filter">
+    <defs>
+        <filter id="threshold">
+            <!-- 这里只是一个阈值效果--像素足够高的地方不透明度设置为完全不透明，其他地方像素设置为完全透明。 -->
+            <feColorMatrix in="SourceGraphic"
+                    type="matrix"
+                    values="1 0 0 0 0
+                                    0 1 0 0 0
+                                    0 0 1 0 0
+                                    0 0 0 255 -140" />
+        </filter>
+    </defs>
+</svg>
+
+<!-- partial -->
+  <script src="./script.js"></script>
 </body>
 </html>
