@@ -1,0 +1,111 @@
+/* 引用字体库 */
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(https://fonts.googleapis.com/css?family=Fauna+One);
+
+/* 字体和图片部分调整样式 */
+.sample {
+  font-family: 'Fauna One', Arial, sans-serif;
+  position: relative;
+  margin: 10px 20px;
+  min-width: 230px;
+  max-width: 295px;
+  min-height: 220px;
+  width: 100%;
+  color: #fff;
+  text-align: right;
+  line-height: 1.4em;
+  background-color: #1a1a1a;
+  font-size: 16px;
+}
+
+.sample * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+/* 图片部分调整样式 */
+.sample img {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  opacity: 1;
+  width: 100%;
+  /* 移动的动画效果 */
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.sample figcaption {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 20px 0 20px 20px;
+}
+
+/* 对于这两个标签先整体定义 */
+.sample h2,
+.sample p {
+  margin: 0;
+  width: 100%;
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+/* <h2> 标签中的字体 */
+.sample h2 {
+  font-family: 'Playfair Display', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+/* <p> 标签中的字体大小 */
+.sample p {
+  font-size: 0.8em;
+}
+
+.sample a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* 当鼠标移动到图片时，改变大小和位置，以及在 .hover 时固定这个状态 */
+.sample:hover img,
+.sample.hover img {
+  width: 55%;
+  right: -10%;
+}
+
+.sample:hover figcaption h2,
+.sample.hover figcaption h2,
+.sample:hover figcaption p,
+.sample.hover figcaption p {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+/* 为了展示需要，可自行调整背景和整个页面样式 */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 0;
+  height: 100%;
+}
+
