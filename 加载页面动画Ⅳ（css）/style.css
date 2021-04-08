@@ -1,0 +1,635 @@
+.space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #435d70;
+  overflow: hidden;
+}
+
+.space .mars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+}
+
+/* 小怪物触手 */
+.space .mars .tentacle {
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  z-index: 1;
+  height: 70px;
+  width: 70px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  border-left: 15px solid #07a4d4;
+  transform: rotate(-30deg);
+  -webkit-animation: tentacle 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+          animation: tentacle 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+/* 旗子 */
+.space .mars .flag {
+  position: absolute;
+  height: 17px;
+  width: 15px;
+  top: -57px;
+  left: -1px;
+  -webkit-animation: flag-pole 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+          animation: flag-pole 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.space .mars .flag:before {
+  content: "";
+  position: absolute;
+  height: 17px;
+  width: 2px;
+  background: #eee;
+}
+
+.space .mars .flag:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 14px;
+  left: 2px;
+  top: 0;
+  background: rgb(155, 14, 14);
+  -webkit-animation: flag-unfurl 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+          animation: flag-unfurl 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.space .mars .flag .small-tentacle {
+  position: absolute;
+  left: -16px;
+  top: 3px;
+  z-index: 2;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border-left: 10px solid #07a4d4;
+  transform: rotate(25deg);
+  -webkit-animation: small-tentacle 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+          animation: small-tentacle 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.space .mars:before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: -30px;
+  height: 10px;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.2);
+  background: #374d5c;
+  border-radius: 100%;
+}
+
+.space .mars .planet {
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 100%;
+  height: 120px;
+  width: 120px;
+  overflow: hidden;
+  margin-left: -60px;
+  margin-top: -60px;
+  z-index: 2;
+}
+
+.space .mars .planet .surface {
+  position: absolute;
+  border-radius: 100%;
+  height: 140%;
+  width: 140%;
+  top: -30%;
+  right: -10%;
+  box-sizing: border-box;
+  border: 30px solid rgba(0, 0, 0, 0.15);
+  background: rgb(41, 172, 96);
+}
+
+.space .mars .planet .crater1,
+.space .mars .planet .crater2,
+.space .mars .planet .crater3 {
+  position: absolute;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.space .mars .planet .crater1 {
+  height: 20px;
+  width: 20px;
+  top: 32%;
+  left: 17%;
+}
+
+.space .mars .planet .crater2 {
+  height: 10px;
+  width: 10px;
+  top: 26%;
+  left: 55%;
+}
+
+.space .mars .planet .crater3 {
+  height: 10px;
+  width: 10px;
+  top: 60%;
+  left: 40%;
+}
+
+.space .ship {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  margin-top: -55px;
+  margin-right: -55px;
+  height: 22px;
+  background: rgba(0, 0, 0, 0.1);
+  transform-origin: 0% 100% 0;
+  z-index: 1;
+  -webkit-animation: ship 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+          animation: ship 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.space .ship .ship-rotate {
+  position: absolute;
+  height: 22px;
+  transform: rotate(-110deg);
+  -webkit-animation: ship-rotate 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+          animation: ship-rotate 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.space .ship .pod {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  height: 16px;
+  width: 16px;
+  background: #eee;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(-45deg);
+}
+
+.space .ship .fuselage {
+  position: absolute;
+  top: 14px;
+  left: -6px;
+  height: 8px;
+  width: 12px;
+  background: #eee;
+  border-radius: 100% 100% 0 0;
+}
+
+.space .ship .fuselage:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 2px;
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid red;
+}
+
+.space .ship-shadow {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  margin-right: -28px;
+  margin-top: 83px;
+  height: 4px;
+  width: 16px;
+  background: #374d5c;
+  border-radius: 100%;
+  -webkit-animation: ship-shadow 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+          animation: ship-shadow 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.space .exhaust-flame {
+  position: absolute;
+  top: 90%;
+  width: 10px;
+  background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%);
+  height: 20px;
+  left: calc(50% - 25px);
+  -webkit-animation: exhaust 0.2s infinite;
+          animation: exhaust 0.2s infinite;
+}
+
+.space .exhaust-fumes li {
+  width: 6px;
+  height: 6px;
+  background-color: #f5f5f5;
+  list-style: none;
+  position: absolute;
+  border-radius: 100%;
+}
+
+.space .exhaust-fumes li:nth-child(1) {
+  width: 15px;
+  height: 15px;
+  left: -12px;
+  top: 28px;
+  -webkit-animation: fumes 3.2s infinite;
+          animation: fumes 3.2s infinite;
+}
+
+.space .exhaust-fumes li:nth-child(2) {
+  width: 12px;
+  height: 12px;
+  left: -4px;
+  top: 35px;
+  -webkit-animation: fumes 3s 1s infinite;
+          animation: fumes 3s 1s infinite;
+}
+
+.space .exhaust-fumes li:nth-child(3) {
+  width: 10px;
+  height: 10px;
+  left: -17px;
+  top: 38px;
+  -webkit-animation: fumes 4s 2s infinite;
+          animation: fumes 4s 2s infinite;
+}
+
+.space .exhaust-fumes li:nth-child(4) {
+  width: 13px;
+  height: 13px;
+  left: -12px;
+  top: 36px;
+  -webkit-animation: fumes 5s infinite;
+          animation: fumes 5s infinite;
+}
+
+.space .exhaust-fumes li:nth-child(5) {
+  width: 20px;
+  height: 20px;
+  left: -6px;
+  top: 28px;
+  -webkit-animation: fumes2 5s infinite;
+          animation: fumes2 5s infinite;
+}
+
+.space .exhaust-fumes li:nth-child(6) {
+  width: 10px;
+  height: 10px;
+  left: -10px;
+  top: 32px;
+  -webkit-animation: fumes2 2s infinite;
+          animation: fumes2 2s infinite;
+}
+
+.space .exhaust-fumes li:nth-child(7) {
+  width: 11px;
+  height: 11px;
+  left: 7px;
+  top: 34px;
+  -webkit-animation: fumes2 2s infinite;
+          animation: fumes2 2s infinite;
+}
+
+.space .exhaust-fumes li:nth-child(8) {
+  width: 9px;
+  height: 9px;
+  left: 20px;
+  top: 38px;
+  -webkit-animation: fumes2 2s infinite;
+          animation: fumes2 2s infinite;
+}
+
+/* 动画部分 */
+@-webkit-keyframes small-tentacle {
+  0% {
+    transform: rotate(-60deg);
+  }
+  86% {
+    transform: rotate(-60deg);
+  }
+  89% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes small-tentacle {
+  0% {
+    transform: rotate(-60deg);
+  }
+  86% {
+    transform: rotate(-60deg);
+  }
+  89% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@-webkit-keyframes tentacle {
+  0% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    transform: rotate(-165deg) translate(6px, 8px);
+  }
+  82.5% {
+    transform: rotate(-165deg) translate(28px, -17px);
+  }
+  100% {
+    transform: rotate(-165deg) translate(35px, -22px);
+  }
+}
+
+@keyframes tentacle {
+  0% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    transform: rotate(-165deg) translate(6px, 8px);
+  }
+  82.5% {
+    transform: rotate(-165deg) translate(28px, -17px);
+  }
+  100% {
+    transform: rotate(-165deg) translate(35px, -22px);
+  }
+}
+
+@-webkit-keyframes ship {
+  0% {
+    right: -10%;
+    top: -10%;
+    margin-top: -55px;
+    margin-right: -55px;
+  }
+  40% {
+    right: 50%;
+    top: 50%;
+  }
+  79.5% {
+    margin-top: -55px;
+    margin-right: -55px;
+  }
+  84% {
+    margin-top: -20px;
+    margin-right: 0px;
+  }
+  100% {
+    right: 50%;
+    top: 50%;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+}
+
+@keyframes ship {
+  0% {
+    right: -10%;
+    top: -10%;
+    margin-top: -55px;
+    margin-right: -55px;
+  }
+  40% {
+    right: 50%;
+    top: 50%;
+  }
+  79.5% {
+    margin-top: -55px;
+    margin-right: -55px;
+  }
+  84% {
+    margin-top: -20px;
+    margin-right: 0px;
+  }
+  100% {
+    right: 50%;
+    top: 50%;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+}
+
+@-webkit-keyframes ship-rotate {
+  0% {
+    transform: rotate(-110deg);
+  }
+  20% {
+    transform: rotate(-110deg);
+  }
+  34% {
+    transform: rotate(47deg);
+  }
+  79% {
+    transform: rotate(47deg);
+  }
+  100% {
+    transform: rotate(47deg);
+  }
+}
+
+@keyframes ship-rotate {
+  0% {
+    transform: rotate(-110deg);
+  }
+  20% {
+    transform: rotate(-110deg);
+  }
+  34% {
+    transform: rotate(47deg);
+  }
+  79% {
+    transform: rotate(47deg);
+  }
+  100% {
+    transform: rotate(47deg);
+  }
+}
+
+@-webkit-keyframes ship-shadow {
+  0% {
+    right: -10%;
+    transform: scale(1.4, 1);
+    opacity: 0.3;
+  }
+  40% {
+    right: 50%;
+    transform: scale(0.75, 1);
+    opacity: 1;
+  }
+  100% {
+    right: 50%;
+  }
+}
+
+@keyframes ship-shadow {
+  0% {
+    right: -10%;
+    transform: scale(1.4, 1);
+    opacity: 0.3;
+  }
+  40% {
+    right: 50%;
+    transform: scale(0.75, 1);
+    opacity: 1;
+  }
+  100% {
+    right: 50%;
+  }
+}
+
+@-webkit-keyframes flag-pole {
+  0% {
+    top: -57px;
+  }
+  48% {
+    top: -57px;
+  }
+  54% {
+    top: -77px;
+  }
+  90% {
+    top: -77px;
+  }
+  92% {
+    top: -57px;
+  }
+  100% {
+    top: -57px;
+  }
+}
+
+@keyframes flag-pole {
+  0% {
+    top: -57px;
+  }
+  48% {
+    top: -57px;
+  }
+  54% {
+    top: -77px;
+  }
+  90% {
+    top: -77px;
+  }
+  92% {
+    top: -57px;
+  }
+  100% {
+    top: -57px;
+  }
+}
+
+@-webkit-keyframes flag-unfurl {
+  0% {
+    width: 0;
+  }
+  55% {
+    width: 0;
+  }
+  60% {
+    width: 14px;
+  }
+  90% {
+    width: 14px;
+  }
+  100% {
+    width: 14px;
+  }
+}
+
+@keyframes flag-unfurl {
+  0% {
+    width: 0;
+  }
+  55% {
+    width: 0;
+  }
+  60% {
+    width: 14px;
+  }
+  90% {
+    width: 14px;
+  }
+  100% {
+    width: 14px;
+  }
+}
+
+@-webkit-keyframes fumes {
+  50% {
+    transform: scale(1.3);
+    background-color: transparent;
+  }
+  51% {
+    transform: scale(0.8);
+  }
+  100% {
+    background-color: #f5f5f5;
+    transform: scale(1);
+  }
+}
+
+@keyframes fumes {
+  50% {
+    transform: scale(1.3);
+    background-color: transparent;
+  }
+  51% {
+    transform: scale(0.8);
+  }
+  100% {
+    background-color: #f5f5f5;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes exhaust {
+  0% {
+    background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%);
+  }
+  50% {
+    background: linear-gradient(to bottom, transparent 8%, #f5f5f5 100%);
+  }
+  75% {
+    background: linear-gradient(to bottom, transparent 12%, #f5f5f5 100%);
+  }
+}
+
+@keyframes exhaust {
+  0% {
+    background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%);
+  }
+  50% {
+    background: linear-gradient(to bottom, transparent 8%, #f5f5f5 100%);
+  }
+  75% {
+    background: linear-gradient(to bottom, transparent 12%, #f5f5f5 100%);
+  }
+}
+
+@-webkit-keyframes fumes2 {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fumes2 {
+  50% {
+    transform: scale(1.1);
+  }
+}
