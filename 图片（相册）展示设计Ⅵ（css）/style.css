@@ -1,0 +1,166 @@
+/* 引入文字样式库 */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+/* sample 部分的整体样式 */
+.sample {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  background-color: #000000;
+}
+
+.sample *,
+.sample *:before,
+.sample *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 当过了 0.55s 过渡效果 */
+  -webkit-transition: all 0.55s ease;
+  transition: all 0.55s ease;
+}
+
+/* 图片部分的样式 */
+.sample img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+
+/* figcaption 用作文档中插图的图像，带有一个标题 */
+.sample figcaption {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  padding: 5px 10px 10px;
+}
+
+/* 绘制线条 */
+.sample figcaption:before,
+.sample figcaption:after {
+  height: 2px;
+  width: 400px;
+  position: absolute;
+  content: '';
+  background-color: #ffffff;
+}
+
+/* 上面一条线 */
+.sample figcaption:before {
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+/* 下面一条线 */
+.sample figcaption:after {
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+/* 绘制线条 */
+.sample figcaption div:before,
+.sample figcaption div:after {
+  width: 2px;
+  height: 300px;
+  position: absolute;
+  content: '';
+  background-color: #ffffff;
+}
+
+/* 左面一条线 */
+.sample figcaption div:before {
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+/* 右面一条线 */
+.sample figcaption div:after {
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* 文字部分 */
+.sample h2,
+.sample h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sample h2 {
+  font-weight: 400;
+}
+
+.sample h4 {
+  display: block;
+  font-weight: 700;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  color: #000000;
+}
+
+.sample a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 当鼠标放到图片时的效果, .hover 仅演示需要，可自行取消 */
+.sample:hover img,
+.sample.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+
+.sample:hover figcaption:before,
+.sample.hover figcaption:before,
+.sample:hover figcaption:after,
+.sample.hover figcaption:after,
+.sample:hover figcaption div:before,
+.sample.hover figcaption div:before,
+.sample:hover figcaption div:after,
+.sample.hover figcaption div:after {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.sample:hover figcaption:before,
+.sample.hover figcaption:before,
+.sample:hover figcaption:after,
+.sample.hover figcaption:after {
+  /* 过渡延时 0.15s */
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+/* 背景仅演示作用 */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 0;
+  height: 100%;
+}
