@@ -1,0 +1,69 @@
+html,body {
+  margin: 0;
+}
+
+/* 页眉部分 */
+header {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  
+  /* 定义 */
+  --percentage: 0.5;
+}
+
+header .view, header .tree {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img, header video {
+  position: absolute;
+  display: block;
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header .morning {
+  z-index: 20;
+  opacity: calc(1 - (var(--percentage) - 0.25) / 0.25);
+}
+
+header .afternoon {
+  z-index: 10;
+  opacity: calc(1 - (var(--percentage) - 0.5) / 0.5);
+}
+
+header .view {
+  transform: translatex(calc(var(--percentage) * 100px));
+}
+
+header .tree {
+  transform: translatex(calc(var(--percentage) * 50px));
+  filter: blur(3px);
+}
+
+header .view,
+header .tree,
+header .morning,
+header .afternoon {
+  transition: .2s all ease-in;
+}
+
+header.moving .view,
+header.moving .tree,
+header.moving .morning,
+header.moving .afternoon {
+  transition: none;
+}
+
+header .window-cover {
+  opacity: calc((var(--percentage) - 0.9) / 0.1);
+}

@@ -1,0 +1,76 @@
+/* 引用字体库 */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Dancing Script", cursive;
+  background-color: #eee;
+  height: 10000px;
+}
+
+ul {
+  position: fixed;
+  top: calc(50% - 260px);
+  left: calc(50% - 260px);
+  width: 520px;
+  height: 520px;
+  background-color: #333;
+  perspective: 1000px;
+  box-shadow: 0 0 20px #000 inset;
+}
+
+/* 此时你会看到 Scroll 出现 */
+ul::before {
+  content: "Scroll...";
+  position: absolute;
+  top: -1.5em;
+  font-size: 24px;
+}
+
+/* li 部分 */
+li {
+  /* 提前设置好旋转值 */
+  --ang: -180deg;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff7;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 48px 32px;
+  font-size: 24px;
+  transform: rotateY(var(--ang));
+  transform-style: preserve-3d;
+  /* 先隐藏 */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+/* li 中 img */
+li > img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 500px;
+  height: 500px;
+  z-index: -2;
+  border: 1px solid #fff;
+}
+
+li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5em;
+  background-color: #fff7;
+  z-index: -1;
+}

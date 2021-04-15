@@ -1,0 +1,137 @@
+html, body {
+  margin:  0;
+}
+
+/* 设置页眉部分 */
+header {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* :nth-of-type(n) 选择器匹配属于父元素的特定类型的第 N 个子元素的每个元素 */
+.view:nth-of-type(1)> img {
+  width: 5612px; /* 宽度 */
+  height: 209px; /* 高度 */
+  transform: scale(1) translate(0px, -17.4194px) rotate(0deg); /* 缩放、平移、旋转 */
+  opacity: 1;
+}
+
+.view:nth-of-type(2)> img {
+  width: 5612px;
+  height: 209px;
+  transform: scale(1) translate(1277.42px, 0px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(3)> img {
+  width: 1841px;
+  height: 188px;
+  transform: scale(1) translate(783.871px, 0px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(4)> img {
+  width: 1671px;
+  height: 204px;
+  transform: scale(1) translate(-739.742px, 0px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(5)> img {
+  width: 290px;
+  height: 72px;
+  transform: scale(1) translate(705.484px, 52.2581px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(6)> img {
+  width: 238px;
+  height: 98px;
+  transform: scale(1) translate(292.645px, 42.271px) rotate(0deg);
+  opacity: 0;
+}
+
+.view:nth-of-type(7)> img {
+  width: 1428px;
+  height: 146px;
+  transform: scale(1) translate(130.065px, 16.2581px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(8)> img {
+  width: 1428px;
+  height: 94px;
+  transform: scale(1) translate(-406.452px, 56.9032px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(9)> img {
+  width: 230px;
+  height: 160px;
+  transform: scale(1) translate(-278.71px, 18.5806px) rotate(0deg);
+  opacity: 0;
+}
+
+.view:nth-of-type(10)> img {
+  width: 67px;
+  height: 118px;
+  transform: scale(1) translate(-394.839px, 37.1613px) rotate(0deg);
+  opacity: 0;
+}
+
+.view:nth-of-type(11)> img {
+  width: 314px;
+  height: 132px;
+  transform: scale(1) translate(-104.516px, 15.6774px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(12)> img {
+  width: 2483px;
+  height: 209px;
+  transform: scale(1) translate(116.129px, 0px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(13)> img {
+  width: 487px;
+  height: 170px;
+  transform: scale(1) translate(250.839px, 15.6774px) rotate(0deg);
+  opacity: 1;
+}
+
+.view:nth-of-type(14)> img {
+  width: 515px;
+  height: 245px;
+  transform: scale(1) translate(2438.71px, 0px) rotate(0deg);
+  filter: blur(2px);
+  opacity: 1;
+}
+
+.view:nth-of-type(15)> img {
+  width: 1112px;
+  height: 209px;
+  transform: scale(1) translate(-1161.29px, 0px) rotate(0deg);
+  filter: blur(1px);
+  opacity: 1;
+}
+
+/* canvas 画布 */
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
