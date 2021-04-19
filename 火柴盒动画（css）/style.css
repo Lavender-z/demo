@@ -1,0 +1,496 @@
+/* 引用字体库 */
+@import url("https://fonts.googleapis.com/css?family=BenchNine:700&display=swap");
+
+/* 定义好需要的参数 */
+:root {
+  --color-outline: #302519;
+  --color-background: #f1d6bc;
+  --color-match: #b36b4a;
+  --size-border: 8px;
+  --size-height: 300px;
+  --size-width: 200px;
+  --size-depth: 100px;
+}
+
+/* 对于所有 HTML 的 doc 元素标签的样式进行定义 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* 在元素内容前后加上指定的内容 */
+*:before,
+*:after {
+  content: "";
+  position: absolute;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;/* 100vh == 100% */
+  background: var(--color-background);
+  font-family: "BenchNine", sans-serif;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  perspective: 1200px;/* 子元素会获得透视效果 */
+  padding-left: 80px;
+  padding-top: 180px;
+}
+
+.box {
+  width: var(--size-height);
+  height: var(--size-width);
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transform: rotate(-50deg) rotateX(30deg) translateZ(10px);
+  cursor: pointer;/* 光标呈现为指示链接的指针（一只手） */
+  transform-origin: center center;
+}
+
+/* 对于 div 中的样式 */
+.box > div {
+  position: absolute;
+  text-align: center;
+}
+
+/* 盒子前后的宽高 */
+.box .front,
+.box .back {
+  width: var(--size-height);
+  height: var(--size-width);
+}
+
+/* 盒子前后的颜色、边框 */
+.box .front,
+.box .back {
+  background: var(--color-background);
+  border: var(--size-border) solid var(--color-outline);
+}
+
+/* 盒子左右的宽高 */
+.box .right,
+.box .left {
+  width: var(--size-depth);
+  height: var(--size-width);
+}
+
+.box .right,
+.box .left {
+  left: var(--size-depth);
+}
+
+/* 盒子上下的宽高 */
+.box .top,
+.box .bottom {
+  width: var(--size-height);
+  height: var(--size-depth);
+}
+
+.box .top,
+.box .bottom {
+  top: calc(var(--size-depth) / 2);/* 动态计算 top */
+}
+
+/* 盒子上下、左右的颜色、边框 */
+.box .right,
+.box .left,
+.box .top,
+.box .bottom {
+  background: var(--color-background);
+  border: var(--size-border) solid var(--color-outline);
+  border-bottom-width: calc(var(--size-border) * 2);
+}
+
+/* 调整每个部分的位置，使其成为盒子 */
+.box .front {
+  transform: translateZ(50px);
+}
+
+.box .back {
+  transform: rotateX(-180deg) translateZ(50px);
+}
+
+.box .right {
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+.box .left {
+  transform: rotateY(-90deg) translateZ(150px);
+  background: var(--color-outline);
+}
+
+.box .top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.box .bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box.outside .bottom:before {
+	background-image: radial-gradient(var(--color-outline) 20%, transparent 20%),
+		radial-gradient(var(--color-outline) 20%, transparent 20%);
+	background-position: 0 0, 8px 8px;
+	background-size: 16px 16px;
+	width: calc(100% - 20px);
+	height: calc(100% - 22px);
+}
+
+.box.outside .front {
+  z-index: 1000;
+}
+
+.box.outside .front:before {
+  left: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  background: var(--color-outline);
+  /* 弧度 */
+  -webkit-mask-image: radial-gradient(
+    circle 10px at 100% 100%,
+    transparent 0,
+    transparent 55px,
+    var(--color-outline) 0px
+  );
+  mask-image: radial-gradient(
+    circle 10px at 100% 100%,
+    transparent 0,
+    transparent 55px,
+    var(--color-outline) 0px
+  );
+}
+
+.box.outside .front:after {
+  content: "Light the \A fire with \A matches";
+  white-space: pre;/* 保留空白，空白会被浏览器保留 */
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  color: var(--color-outline);
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  transform-origin: center center;
+  background: var(--color-background);
+  width: 70px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: calc(50% - 35px);
+  top: calc(50% - 42px);
+}
+
+/* 盒子上的线条花纹 */
+.box.outside .front .line:nth-child(1),
+.box.outside .front .line:nth-child(2) {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box.outside .front .line:nth-child(1) {
+  width: 154px;
+  height: 120px;
+  left: calc(50% - 77px);
+  top: calc(50% - 60px);
+}
+
+.box.outside .front .line:nth-child(1):before {
+  width: 4px;
+  height: 140px;
+  background: linear-gradient(
+    to top,
+    var(--color-outline),
+    var(--color-outline) 10px,
+    transparent 10px,
+    transparent 16px,
+    var(--color-outline) 16px,
+    var(--color-outline) 124px,
+    transparent 124px,
+    transparent 130px,
+    var(--color-outline) 130px,
+    var(--color-outline) 140px
+  );
+}
+
+.box.outside .front .line:nth-child(1):after {
+  width: 4px;
+  height: 174px;
+  background-color: var(--color-outline);
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    var(--color-outline),
+    var(--color-outline) 10px,
+    transparent 10px,
+    transparent 16px,
+    var(--color-outline) 16px,
+    var(--color-outline) 158px,
+    transparent 158px,
+    transparent 164px,
+    var(--color-outline) 164px,
+    var(--color-outline) 174px
+  );
+}
+
+.box.outside .front .line:nth-child(2) {
+  width: 116px;
+  height: 106px;
+  left: calc(50% - 58px);
+  top: calc(50% - 53px);
+  border-radius: 50%;
+}
+
+.box.outside .front .line:nth-child(2):before,
+.box.outside .front .line:nth-child(2):after {
+  width: 4px;
+  height: 140px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to top,
+    var(--color-outline),
+    var(--color-outline) 14px,
+    transparent 14px,
+    transparent 22px,
+    var(--color-outline) 22px,
+    var(--color-outline) 118px,
+    transparent 118px,
+    transparent 126px,
+    var(--color-outline) 126px,
+    var(--color-outline) 140px
+  );
+}
+
+.box.outside .front .line:nth-child(2):before {
+  transform: rotate(-45deg);
+}
+
+.box.outside .front .line:nth-child(2):after {
+  transform: rotate(45deg);
+}
+
+.box.outside .front .line:nth-child(3),
+.box.outside .front .line:nth-child(4) {
+  position: absolute;
+  width: 116px;
+  height: 106px;
+  left: calc(50% - 58px);
+  top: calc(50% - 53px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box.outside .front .line:nth-child(3):before,
+.box.outside .front .line:nth-child(3):after,
+.box.outside .front .line:nth-child(4):before,
+.box.outside .front .line:nth-child(4):after {
+  width: 4px;
+  border-radius: 4px;
+  background-color: var(--color-outline);
+}
+
+.box.outside .front .line:nth-child(3):before,
+.box.outside .front .line:nth-child(3):after {
+  height: 150px;
+}
+
+.box.outside .front .line:nth-child(3):before {
+  transform: rotate(67.5deg);
+}
+
+.box.outside .front .line:nth-child(3):after {
+  transform: rotate(-67.5deg);
+}
+
+.box.outside .front .line:nth-child(4):before,
+.box.outside .front .line:nth-child(4):after {
+  height: 126px;
+}
+
+.box.outside .front .line:nth-child(4):before {
+  transform: rotate(22.5deg);
+}
+
+.box.outside .front .line:nth-child(4):after {
+  transform: rotate(-22.5deg);
+}
+
+.box.inside .bottom:before,
+.box.inside .front:after,
+.box.inside .front:before {
+  display: none;
+}
+
+.box.inside .right {
+  background-color: var(--color-outline);
+}
+
+.box.inside .back,
+.box.inside .front {
+  width: var(--size-height);
+  background-color: var(--color-outline);
+  height: calc(var(--size-width) - calc(var(--size-border) * 1.5));
+  margin-top: var(--size-border);
+}
+
+.box.inside .right,
+.box.inside .left {
+  width: var(--size-depth);
+  height: calc(var(--size-width) - calc(var(--size-border) * 1.5));
+  background-color: var(--color-outline);
+  left: var(--size-depth);
+  top: var(--size-border);
+}
+
+.box.inside .left {
+  opacity: 0;
+}
+
+.box.inside .top,
+.box.inside .bottom {
+  width: var(--size-height);
+  height: var(--size-depth);
+}
+
+.box.inside .bottom {
+  top: calc(calc(var(--size-depth) / 2) + calc(var(--size-border) * -0.5));
+  border-top-width: calc(var(--size-border) * 2);
+}
+
+.box.inside .top {
+  background-color: var(--color-outline);
+  top: calc(calc(var(--size-depth) / 2) + calc(var(--size-border) / 1));
+}
+
+.box.inside .front {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-right: 30px;
+}
+
+/* 火柴 */
+.box.inside .front .match {
+  height: 16px;
+  width: 200px;
+  border: calc(var(--size-border) / 2) solid var(--color-outline);
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.box.inside .front .match:before {
+  width: 12px;
+  height: 100%;
+  background-color: var(--color-match);
+  right: 0;
+}
+
+.box.inside .front .match:after {
+  height: 16px;
+  width: 24px;
+  background-color: var(--color-background);
+  border: calc(var(--size-border) / 2) solid var(--color-outline);
+  border-radius: 50% 50% 50% 50% / 40% 50% 50% 40%;
+  right: calc(-24px - calc(var(--size-border) / 2));
+  top: calc((50% - 8px) - calc(var(--size-border) / 2));
+  background-image: radial-gradient(var(--color-outline) 20%, transparent 20%),
+    radial-gradient(var(--color-outline) 20%, transparent 20%);
+  background-position: 0 0, 4px 4px;
+  background-size: 8px 8px;
+}
+
+/* 调整盒子位置 */
+.box.inside {
+  transform: translateX(55px) translateZ(-6px);
+}
+
+.box.inside .back {
+  position: relative;
+}
+
+/* 调整文字，使之显示，并调整为正确方向 */
+.box.inside .back span {
+  color: var(--color-outline);
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: calc(var(--size-border) * -6);
+  margin-top: calc(var(--size-border) * -6);
+  font-size: calc(var(--size-border) * 2);
+  transform-origin: bottom center;
+  transform: scaleY(-1);
+  text-transform: uppercase; /* 大写 */
+  transition: opacity 0.2s linear 0.2s;
+}
+
+/* 当鼠标放置在盒子上时，文字消失 */
+.box:hover .box.inside .back span {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+/* 当鼠标放置在盒子上时，内部盒子移动 */
+.box:hover .box.inside {
+  transform: translate(100px);
+}
+
+/* 当鼠标放置在盒子上时，盒子旋转 */
+.box:hover {
+  transform: rotate(-20deg) rotateX(35deg) rotateZ(-25deg);
+}
+
+.box:hover .box.inside .front {
+  transform: translateZ(50px);
+  transition: transform 0.2s ease;
+}
+
+.box.inside .front {
+  transform: translateZ(35px);
+  border: none;
+  transition: all 0.2s ease;
+  transition-delay: 0.3s;
+}
+
+.box.inside .front .match {
+  transition: all 0.2s ease;
+  transition-delay: 0.2s;
+}
+
+.box:hover .box.inside .front .match {
+  transition: all 0.3s ease-in;
+}
+
+/* 火柴的第3个进行调整 */
+.box:hover .box.inside .front .match:nth-child(3) {
+  transform: translateX(20px);
+}
+
+/* 火柴的第4个进行调整 */
+.box:hover .box.inside .front .match:nth-child(4) {
+  transform: translateX(40px);
+}
+
+/* 火柴的第6个进行调整 */
+.box:hover .box.inside .front .match:nth-child(6) {
+  transform: translateX(70px);
+}
