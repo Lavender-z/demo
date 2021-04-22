@@ -1,0 +1,301 @@
+/* 引用字体库 */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+/* 设置公共样式，全局定义。 */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 重置这些标签的样式 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,
+font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,
+tbody,tfoot,thead,tr,th,td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* 选择器用于选取获得焦点的元素。 */
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "" "";
+}
+/**** 以上均为重置 css3 样式 ***/
+
+/* 修改主体样式 */
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  background-color: #f8d5a0;
+}
+
+/* 修改 background 部分的样式 */
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  height: 500px;
+  width: 500px;
+  position: fixed;
+  transform: translateY(0px);
+  transition: all 2s cubic-bezier(0.22, 0.44, 0, 1.15);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 0.55em solid #fff;
+  transform-style: preserve-3d;
+}
+
+.background:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* background 的第一个 - 第十五个子元素的背景 */
+.background:first-child {
+  background-image: url(https://source.unsplash.com/h5yMpgOI5nI/500x500);
+}
+
+.background:nth-child(2) {
+  background-image: url(https://source.unsplash.com/TIGDsyy0TK4/500x500);
+}
+
+.background:nth-child(3) {
+  background-image: url(https://source.unsplash.com/TdDtTu2rv4s/500x500);
+}
+
+.background:nth-child(4) {
+  background-image: url(https://source.unsplash.com/eudGUrDdBB0/500x500);
+}
+
+.background:nth-child(5) {
+  background-image: url(https://source.unsplash.com/eJH4f1rlG7g/500x500);
+}
+
+.background:nth-child(6) {
+  background-image: url(https://source.unsplash.com/24RUrLSW1HI/500x500);
+}
+
+.background:nth-child(7) {
+  background-image: url(https://source.unsplash.com/ezSFnAFi9hY/500x500);
+}
+
+.background:nth-child(8) {
+  background-image: url(https://source.unsplash.com/2TYrR2IB72s/500x500);
+}
+
+.background:nth-child(9) {
+  background-image: url(https://source.unsplash.com/9aOswReDKPo/500x500);
+}
+
+.background:nth-child(10) {
+  background-image: url(https://source.unsplash.com/Nl7eLS8E2Ss/500x500);
+}
+
+.background:nth-child(11) {
+  background-image: url(https://source.unsplash.com/3HhXWJzG5Ko/500x500);
+}
+
+.background:nth-child(12) {
+  background-image: url(https://source.unsplash.com/fczCr7MdE7U/500x500);
+}
+
+.background:nth-child(13) {
+  background-image: url(https://source.unsplash.com/uI900SItAyY/500x500);
+}
+
+.background:nth-child(14) {
+  background-image: url(https://source.unsplash.com/0AynZdszfz0/500x500);
+}
+
+.background:nth-child(15) {
+  background-image: url(https://source.unsplash.com/C6JhUKs9q8M/500x500);
+}
+
+/* 调整上面的图片的显示顺序 */
+.background:nth-child(1) {
+  z-index: 15;
+}
+
+.background:nth-child(2) {
+  z-index: 14;
+}
+
+.background:nth-child(3) {
+  z-index: 13;
+}
+
+.background:nth-child(4) {
+  z-index: 12;
+}
+
+.background:nth-child(5) {
+  z-index: 11;
+}
+
+.background:nth-child(6) {
+  z-index: 10;
+}
+
+.background:nth-child(7) {
+  z-index: 9;
+}
+
+.background:nth-child(8) {
+  z-index: 8;
+}
+
+.background:nth-child(9) {
+  z-index: 7;
+}
+
+.background:nth-child(10) {
+  z-index: 6;
+}
+
+.background:nth-child(11) {
+  z-index: 5;
+}
+
+.background:nth-child(12) {
+  z-index: 4;
+}
+
+.background:nth-child(13) {
+  z-index: 3;
+}
+
+.background:nth-child(14) {
+  z-index: 2;
+}
+
+.background:nth-child(15) {
+  z-index: 1;
+}
+
+/* 调整 content-wrapper */
+.content-wrapper {
+  height: 400px;
+  width: 400px;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: all 1.5s cubic-bezier(0.4, 0.6, 0, 1.2);
+  position: absolute;
+  /* 居中 */
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(175px);
+}
+
+/* 修改字体大小 */
+.content-title {
+  font-size: 3.8em;
+}
+
+/* 设置向上滚动 */
+.background.up-scroll {
+  transform: translate3d(0, 100vh/2, 0);
+}
+
+/* 当向上滚动时背景的状态 */
+.background.up-scroll + .background {
+  scale: 0.5;
+  opacity: 0;
+}
+
+/* 当向上滚动时背景和 content-wrapper 的移动状态 */
+.background.up-scroll + .background .content-wrapper {
+  transform: translateY(300px);
+}
+
+/* 设置向下滚动 */
+.background.down-scroll {
+  transform: translate3d(50px, -100vh, 0) rotate(260deg);
+}
+
+/* 当向下滚动时content-wrapper 的移动状态 */
+.background.down-scroll .content-wrapper {
+  transform: translateY(-300px);
+}
+
+.background.down-scroll + .background:not(.down-scroll) {
+  transform: translate3d(0, -50px/2, 0);
+}
+
+.background.down-scroll + .background:not(.down-scroll) .content-wrapper {
+  transform: translateY(-300px/2);
+}
+
+.last-wrap {
+  transform: translateY(150px);
+}
