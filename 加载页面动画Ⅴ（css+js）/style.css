@@ -1,0 +1,720 @@
+/* 引入字体库 */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+/* 对于标签样式调整 */
+* {
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+/* 主体的背景和字体 */
+body {
+	background: #fff5df;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* 父，对整体进行调整 */
+.all {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* 缩小 */
+	transform: scale(.75);
+}
+
+/* 子 */
+.bowl {
+	width: 250px;
+	height: 250px;
+	border: 5px solid #fff;
+	border-radius: 50%;
+	position: fixed;
+	top: calc(50% - 125px);
+	left: calc(50% - 125px);
+	background: rgba(90, 201, 226, 0.3);
+}
+
+/* 容器的阴影 */
+.bowl:before {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 50px;
+	width: 150px;
+	height: 50px;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.15);
+}
+
+/* 容器口 */
+.bowl:after {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: calc(25% - 3px);
+	width: 50%;
+	height: 40px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+}
+
+/* 调整整体位置 */
+.bowl .water {
+	position: absolute;
+	bottom: 5%;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	/* 添加水的动画 */
+	animation: top-inner 5s ease infinite;
+}
+
+@keyframes top-inner {
+	from {
+		transform: rotate(0deg);
+		margin-left: 0px;
+	}
+	25% {
+		transform: rotate(3deg);
+		margin-left: -3px;
+	}
+	50% {
+		transform: rotate(-6deg);
+		margin-left: 6px;
+	}
+	75% {
+		transform: rotate(5deg);
+		margin-left: -5px;
+	}
+	to {
+		transform: rotate(0deg);
+		margin-left: 0px;
+	}
+}
+
+/* 容器中的水 */
+.bowl .water .inner {
+	width: 225px;
+	height: 225px;
+	border-radius: 50%;
+	background: #4e99ce;
+	position: absolute;
+	bottom: 0;
+	left: 12.5px;
+}
+
+/* 为了使水立体 */
+.bowl .top-water {
+	position: absolute;
+	width: 225px;
+	height: 60px;
+	border-radius: 50%;
+	background: #82bde6;
+	bottom: 105px;
+	left: 12.5px;
+	/* 添加动画 */
+	animation: top 5s ease infinite;
+}
+
+/* 与上面动画保持一致，如果不一致，刷新一下  */
+@keyframes top {
+	from {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(3deg);
+	}
+	50% {
+		transform: rotate(-6deg);
+	}
+	75% {
+		transform: rotate(5deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+/* 至此，容器和水就完成了~ */
+
+/* 待全部画完后就可以添加动画了,添加后人物就在容器中了 */
+.center-box {
+	height: 400px;
+	width: 400px;
+	position: fixed;
+	top: calc(50% - 250px);
+	left: calc(50% - 180px);
+  /* 添加动画 */
+  animation: float 5s ease infinite;
+	transform: scale(0.5);
+}
+
+@keyframes float {
+	from {
+		transform: translate(0, 0px) scale(0.25);
+	}
+	25% {
+		transform: translate(0, 4px) scale(0.25);
+	}
+	50% {
+		transform: translate(0, -7px) scale(0.25);
+	}
+	75% {
+		transform: translate(0, 7px) scale(0.25);
+	}
+	to {
+		transform: translate(0, -0px) scale(0.25);
+	}
+}
+
+/* 渔民 */
+.fisherman {
+	width: 400px;
+	height: 300px;
+}
+
+/* 身体 */
+.fisherman .body {
+	width: 80px;
+	height: 150px;
+	background: #d2bd24;
+	position: absolute;
+	bottom: 15px;
+	right: 40px;
+	-webkit-clip-path: ellipse(40% 50% at 0% 50%);
+	clip-path: ellipse(40% 50% at 0% 50%);
+	transform: rotate(-20deg);
+}
+
+.fisherman .body:before {
+	content: "";
+	width: 80px;
+	height: 200px;
+	background: #d2bd24;
+	position: absolute;
+	bottom: -10px;
+	right: 15px;
+	-webkit-clip-path: ellipse(90% 50% at 0% 50%);
+	clip-path: ellipse(90% 50% at 0% 50%);
+	transform: rotate(10deg);
+}
+
+/* 右胳膊 */
+.fisherman .right-arm {
+	width: 20px;
+	height: 110px;
+	background: #d2bd24;
+	border-radius: 20px;
+	position: absolute;
+	bottom: 46px;
+	right: 163px;
+	transform: rotate(40deg);
+}
+
+.fisherman .right-arm:before {
+	content: "";
+	background: #ffd1b5;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 82px;
+	right: 50px;
+	border-radius: 20px;
+}
+
+.fisherman .right-arm:after {
+	content: "";
+	width: 20px;
+	height: 50px;
+	background: #d2bd24;
+	border-radius: 20px;
+	position: absolute;
+	bottom: -15px;
+	right: 20px;
+	transform: rotate(-80deg);
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+/* 右腿 */
+.fisherman .right-leg {
+	width: 20px;
+	height: 110px;
+	background: #bf3526;
+	border-radius: 20px;
+	position: absolute;
+	bottom: -22px;
+	right: 159px;
+	transform: rotate(-60deg);
+}
+
+.fisherman .right-leg:before {
+	content: "";
+	width: 20px;
+	height: 100px;
+	background: #bf3526;
+	border-radius: 20px;
+	position: absolute;
+	bottom: 45px;
+	left: -40px;
+	transform: rotate(80deg);
+}
+
+.fisherman .right-leg:after {
+	content: "";
+	position: absolute;
+	bottom: 38px;
+	left: -75px;
+	width: 30px;
+	height: 100px;
+	background: #338ca0;
+	transform: rotate(80deg);
+}
+
+/* 鱼竿 */
+.rod {
+  position: absolute;
+  width: 380px;
+  height: 5px;
+  bottom: 130px;
+  left: -140px;
+  background: #331604;
+  transform: rotate(10deg);
+}
+
+/* 鱼竿柄 */
+.rod .handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  left: 310px;
+  top: 3px;
+  background: #efdddb;
+}
+
+.rod .handle:before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 4px;
+  left: 10px;
+  top: 7px;
+  background: #1a1a1a;
+}
+
+/* 鱼线 */
+.rod .rope {
+  width: 3px;
+  height: 250px;
+  top: -18px;
+  left: 22px;
+  transform: rotate(-10deg);
+  background: #fff;
+  /* 添加动画 */
+  /* animation: ; */
+}
+
+.fisherman .butt {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+  bottom: 0;
+  right: 90px;
+  background: #bf3526;
+}
+
+/* 左胳膊 */
+.fisherman .left-arm {
+  position: absolute;
+  width: 20px;
+  height: 90px;
+  bottom: 55px;
+  right: 135px;
+  border-radius: 20px;
+  transform: rotate(30deg);
+  background: #e8d93d;
+}
+
+.fisherman .left-arm:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50px;
+  right: 53px;
+  border-radius: 20px;
+  background: #ffd1b5;
+}
+
+.fisherman .left-arm:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 60px;
+  bottom: -15px;
+  right: 20px;
+  border-radius: 20px;
+  transform: rotate(-70deg);
+  background: #e8d93d;
+}
+
+/* 左腿 */
+.fisherman .left-leg {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  bottom: -14px;
+  right: 120px;
+  border-radius: 20px;
+  transform: rotate(-50deg);
+  background: #de4125;
+}
+
+.fisherman .left-leg:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  bottom: 20px;
+  left: -37px;
+  border-radius: 20px;
+  transform: rotate(60deg);
+  background: #de4125;
+}
+
+.fisherman .left-leg:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 100px;
+  bottom: 2px;
+  left: -70px;
+  transform: rotate(60deg);
+  background: #338ca0;
+}
+
+/* 头部 */
+.fisherman .head {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  bottom: 135px;
+  right: 110px;
+  border-radius: 50%;
+  transform: rotate(10deg);
+}
+
+/* 脸 */
+.head .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d76540;
+}
+
+.head .face:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 85px;
+  top: -20px;
+  left: -10px;
+  border-radius: 50%;
+  background: #ffd1b5;
+  transform: rotate(-10deg);
+}
+
+/* 睫毛 */
+.head .eyebrows {
+  position: absolute;
+  width: 15px;
+  height: 7px;
+  top: 15px;
+  left: -3px;
+  transform: rotate(-10deg);
+  background: #e67e5b;
+}
+
+.head .eyebrows:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 7px;
+  top: 0px;
+  left: 22px;
+  background: #e67e5b;
+}
+
+/* 眼睛 */
+.head .eyes {
+  position: absolute;
+  width: 5px;
+  height: 8px;
+  top: 25px;
+  left: 6px;
+  border-radius: 50%;
+  transform: rotate(-10deg);
+  background: #1a1a1a;
+}
+
+.head .eyes:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 8px;
+  top: 0px;
+  left: 20px;
+  border-radius: 50%;
+  background: #1a1a1a;
+}
+
+/* 鼻子 */
+.head .nose {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 15px solid #fab58e;
+  top: 25px;
+  left: 6px;
+  transform: rotate(-10deg);
+}
+
+/* 胡子 */
+.head .beard {
+	position: absolute;
+	width: 40px;
+	height: 25px;
+	top: 38px;
+	left: 1px;
+	transform: rotate(-10deg);
+	clip-path: ellipse(50% 50% at 50% 100%);
+	background: #e67e5b;
+}
+
+/* 帽子 */
+.head .hat {
+	position: absolute;
+	width: 80px;
+	height: 8px;
+	top: 8px;
+	left: -13px;
+	background: #3d402b;
+}
+
+.head .hat:before {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 40px;
+	left: 10px;
+	bottom: 8px;
+	clip-path: ellipse(50% 50% at 50% 90%);
+	background: #7b8445;
+}
+
+/* 船 */
+/* 调整整个船体的位置、大小关系 */
+.boat {
+	width: 400px;
+	height: 100px;
+	margin-top: -15px;
+}
+
+.boat .motor {
+	width: 80px;
+	height: 80px;
+	border-radius: 20px;
+	top: -50px;
+	right: -370px;
+	background: #ef4723;
+}
+
+.boat .motor:before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 100px;
+	clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+	top: 55px;
+	right: 20px;
+	z-index: -1;
+	background: #bf3526;
+}
+
+.boat .motor:after {
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 20px;
+	left: 0;
+	top: 0;
+	border-top-left-radius: 18px;
+	border-top-right-radius: 18px;
+	background: #fff;
+}
+
+.boat .motor .parts,
+.boat .motor .parts:before,
+.boat .motor .parts:after {
+	position: absolute;
+	width: 25px;
+	height: 5px;
+	right: 10px;
+	top: 30px;
+	border-radius: 20px;
+	background: #bf3526;
+}
+
+.boat .motor .parts:before,
+.boat .motor .parts:after {
+	content: "";
+	right: 0px;
+}
+
+.boat .motor .parts:before {
+	top: 10px;
+}
+
+.boat .motor .parts:after {
+	top: 20px;
+}
+
+/* 扳手 */
+.boat .motor .button {
+	position: absolute;
+	width: 20px;
+	height: 10px;
+	left: -10px;
+	top: 25px;
+	border-radius: 20px;
+	background: #bf3526;
+}
+
+.boat .top {
+	position: absolute;
+	width: 390px;
+	height: 5px;
+	top: 0;
+	right: 0;
+	border-bottom: solid 5px #cdab33;
+	background: #e8da43;
+}
+
+.boat .boat-body {
+	position: absolute;
+	width: 380px;
+	height: 90px;
+	bottom: 0;
+	right: 0;
+	border-bottom-left-radius: 90px;
+	border-bottom-right-radius: 20px;
+	clip-path: polygon(0 0, 100% 0, 99% 100%, 0% 100%);
+	background: #cdab33;
+}
+
+.boat .boat-body:before {
+	content: "";
+	position: absolute;
+	width: 380px;
+	height: 70px;
+	bottom: 20px;
+	right: 0px;
+	border-bottom-left-radius: 60px;
+	background: #d2bd39;
+}
+
+.boat .boat-body:after {
+	content: "";
+	position: absolute;
+	width: 380px;
+	height: 40px;
+	bottom: 50px;
+	right: 0px;
+	border-bottom-left-radius: 60px;
+	background: #e8da43;
+}
+
+/* 波纹 */
+.waves {
+	height: 100%;
+	box-sizing: border-box;
+	border: 7px solid #fff;
+	border-radius: 50%;
+	transform: translate(30px, -30px);
+	z-index: -10;
+	/* 添加动画 */
+	animation: waves 5s ease infinite;
+}
+
+@keyframes waves {
+	from {
+		margin-left: 0px;
+		margin-right: 0px;
+		border-color: #fff;
+	}
+	to {
+		margin-left: -100px;
+		margin-right: -100px;
+		border-color: transparent;
+	}
+}
+
+.fish {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	margin-left: 8px;
+	/* 添加动画 */
+	animation: jump 3s infinite;
+}
+
+@keyframes jump {
+	0% {
+		left: 80px;
+		top: 120px;
+		transform: rotate(90deg);
+		opacity: 1;
+	}
+	16.7% {
+		left: 70px;
+		top: 60px;
+		transform: rotate(-20deg);
+		opacity: 1;
+	}
+	33.4% {
+		left: 60px;
+		top: 120px;
+		transform: rotate(-90deg);
+		opacity: 0;
+	}
+	50% {
+		left: 80px;
+		top: 120px;
+		transform: rotate(90deg);
+		opacity: 0;
+	}
+	100% {
+		left: 80px;
+		top: 120px;
+		transform: rotate(90deg);
+		opacity: 0;
+	}
+}
+
+h1 {
+	position: fixed;
+	width: 100%;
+	top: calc(50% + 170px);
+	left: 0;
+	text-align: center;
+	font-size: 40px;
+	color: rgba(0, 0, 0, 0.15);
+}
