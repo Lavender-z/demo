@@ -1,0 +1,194 @@
+/* 提前定义好参数 */
+:root {
+  --color-main: peru;
+  --head-height: 50px;
+}
+
+html {
+  background: #ccc;
+  min-height: 100%;
+  place-items: center;
+  text-align: center;
+  display: grid;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 定义狗、猫部分 */
+.dog,
+.cat {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: inline-block;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.15));
+}
+
+.dog {
+  transform-origin: center bottom;
+  transform: scale(0.9);
+}
+
+/* 狗的头部 */
+.dog .head {
+  width: 75px;
+  height: var(--head-height);
+  position: absolute;
+  bottom: 149px;
+  left: 50%;
+  border-radius: 0 8px 25px 0; /* 上 右 下 左 */
+  background: radial-gradient(circle at right top, #222 20%, transparent 21%), 
+              var(--color-main);
+}
+
+/* 眼睛 */
+.dog .head:before {
+  content: "";
+  width: 70%;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-98%);
+  background: radial-gradient(circle at 40% 40%, #222 10%, transparent 12%),
+              radial-gradient(circle at 70% 40%, #222 10%, transparent 10%),
+              var(--color-main);
+}
+
+/* 耳朵 */
+.dog .head:after {
+  content: "";
+  width: 70%;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-195%);
+  background: radial-gradient(circle at left bottom, var(--color-main) 25%, transparent 25%),
+              radial-gradient(circle at right bottom, var(--color-main) 25%, transparent 25%);
+}
+
+/* 身体 */
+.dog .body {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom: 0;
+  left: 0;
+  border-radius: 75% 0 100% 0;
+  background: radial-gradient(circle at right 60%, rgba(255, 255, 255, 0.1) 35%, transparent 35%), 
+              var(--color-main);
+}
+
+.dog .body:after {
+  content: "";
+  width: 100%;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 20px 0 0 0;
+  transform: translateX(-30%);
+  background: var(--color-main);
+}
+
+/* 腿 */
+.dog .legs {
+  width: 25px;
+  height: 50%;
+  position: absolute;
+  left: 44%;
+  top: 50%;
+  border-radius: 15px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), 
+              var(--color-main);
+}
+
+.dog .legs:before {
+  content: "";
+  width: 25px;
+  height: 100%;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  border-radius: 15px;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+              var(--color-main);
+}
+
+.dog .legs:after {
+	content: "";
+	width: 25px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: var(--color-main);
+	border-radius: 15px;
+	transform-origin: right bottom;
+	transform: rotate(-90deg) translateX(100%);
+}
+
+/* 猫的头部 */
+.cat .head {
+  width: 35%;
+  height: 50px;
+  position: absolute;
+  bottom: 100px;
+  left: 62.5%;
+  border-radius: 0;
+  transform: translateX(-50%);
+  clip-path: polygon(0% 0%, 25% 35%, 75% 35%, 101% 0%, 101% 101%, 0% 101%);
+  background: var(--color-main);
+}
+
+/* 眼睛 */
+.cat .head:before {
+  width: 25%;
+  height: 25%;
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 15%;
+  border-radius: 0 75% 0 75%;
+  background: #222;
+}
+
+.cat .head:after {
+  width: 25%;
+  height: 25%;
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 60%;
+  border-radius: 75% 0 75% 0;
+  background: #222;
+}
+
+/* 身体 */
+.cat .body {
+  width: 60%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  border-radius: 50px 0 25px 0;
+  background: var(--color-main);
+}
+
+.cat .body:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  bottom: 0;
+  left: -35%;
+  border-radius: 50% 50% 0 50%;
+  border: 15px solid var(--color-main);
+  border-right: 0;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1),
+                    -1px -1px -1px rgba(0, 0, 0, 0.1);
+}
