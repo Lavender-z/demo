@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>图片（相册）展示设计Ⅷ</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- 一共三组，每一组样式相同，包括图片、标题、icons -->
+  <figure class="sample">
+    <img src="https://source.unsplash.com/sWGDbVPcPdg" alt="sample1"/>
+    <figcaption>
+      <h2>Rhone Glacier</h2>
+      <p>The Rhone Glacier is the origin of the Rhone river. The melt water here travels 812 km, through Switzerland, Geneva, and some of France’s best wine country.</p>
+      <!-- 添加 icons,在引用库过后可以看到 -->
+      <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a><a href="#"><i class="ion-person-add"></i></a><a href="#"><i class="ion-heart"></i></a></div>
+    </figcaption>
+  </figure>
+  
+  <!-- 现在我们把剩下两个补全，由于第二个在 class类名添加了 hover，所以为了有动态，我们要在
+  css中添加对应的样式 -->
+  <figure class="sample hover">
+    <img src="https://source.unsplash.com/BJHXWA5Chxk" alt="sample2"/>
+    <figcaption>
+      <h2>Muzeum Susch</h2>
+      <p>NARCISSUSSUSCH by polish sculptor Mirosław Bałka as seen in Museum Susch, in Susch, Switzerland.</p>
+      <!-- 添加 icons,在引用库过后可以看到 -->
+      <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a><a href="#"><i class="ion-person-add"></i></a><a href="#"><i class="ion-heart"></i></a></div>
+    </figcaption>
+  </figure>
+
+  <figure class="sample">
+    <img src="https://source.unsplash.com/v4WVTcFKIDM" alt="sample3"/>
+    <figcaption>
+      <h2>Stoos</h2>
+      <p>Bergkapelle Stoos nestled amongst the Swiss alps</p>
+      <!-- 添加 icons,在引用库过后可以看到 -->
+      <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a><a href="#"><i class="ion-person-add"></i></a><a href="#"><i class="ion-heart"></i></a></div>
+    </figcaption>
+  </figure>
+
+  <!-- 引用 jquery 和自己写的 js -->
+  <!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script src="./script.js"></script>
+</body>
+</html>
