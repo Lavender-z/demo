@@ -1,0 +1,13 @@
+{
+  // Character(s) to be added after the classes CSS (including blank spaces)
+  "vs-html-to-css.append": " {\n}\n",
+  // Disable notification
+  "vs-html-to-css.disableNotification": false,
+  // Lists of classes CSS to ignore
+  "vs-html-to-css.ignore": [
+    "container",
+    "row"
+  ],
+  "python.pythonPath": "D:\\Anaconda3\\python.exe",
+  "liveServer.settings.CustomBrowser": "chrome",
+}
